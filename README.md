@@ -1,10 +1,10 @@
-# 100-Days-of-SwiftUI
+# 100 Days of SwiftUI
 
 SwiftUI learn basic challenge from [Hacking with Swift](https://www.hackingwithswift.com/100/swiftui)
 
 ## Rules
 Do the following **every day** for **100 days**:
-* Spend **one hour**<sup>*</sup> reading/watching SwiftUI tutorials, or writing Swift code.
+* Spend **one hour**<sup>*</sup> reading/watching SwiftUI tutorials, or writing SwiftUI code.
 * Update progress in repo **documentation**.
 
 <sup>*</sup>Limiting time spent is meant to avoid burnt-out, dicipline and consistency is preffered for long term gain.
@@ -116,7 +116,7 @@ Do the following **every day** for **100 days**:
 
 ## Intention
 
-This repo is built to learn [SwiftUI](https://developer.apple.com/swiftui/)  programming language using a challenge-based method.
+This repo is built to learn [SwiftUI](https://developer.apple.com/swiftui/) programming language using a challenge-based method.
 
 ## Special Thanks
 
