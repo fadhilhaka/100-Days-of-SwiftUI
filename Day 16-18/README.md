@@ -215,7 +215,35 @@ This means we say what we want rather than say how it should be done. We said we
 
 ### Segmented Control
 
+We can change Picker style by calling **.pickerStyle()**. THis modifier will change Picker style to segmented control:
 
+~~~
+.pickerStyle(SegmentedPickerStyle())
+~~~
+
+### Header/Footer
+
+SwiftUI lets us add views to the header and footer of a section, which in this instance we can use to add a small explanatory prompt. 
+
+~~~
+Section(header: Text("How much tip do you want to give?")) {
+    Picker("Tip percentage", selection: $tipPercentage) {
+        ForEach(0 ..< tipPercentages.count) {
+            Text("\(self.tipPercentages[$0])%")
+        }
+    }
+    .pickerStyle(SegmentedPickerStyle())
+}
+~~~
 
 ## [Project 1, Part Three](https://www.hackingwithswift.com/100/swiftui/18)
 
+SwiftUI adds string interpolation feature: the ability to decide how a number ought to be formatted inside the string. This actually dates way back to the C programming language, we write a string called a specifier, giving it the value "%.2f”. That’s C’s syntax to mean “a two-digit floating-point number.”
+Very roughly, “%f” means “any sort of floating-point number,” which in our case will be the entire number. 
+An alternative is “%g”, which does the same thing except it removes insignificant zeroes from the end – $12.50 would be written as $12.5. Putting “.2” into the mix is what asks for two digits after the decimal point, regardless of what they are.
+
+[C-style format specifiers](https://en.wikipedia.org/wiki/Printf_format_string)
+
+~~~
+Text("$\(totalPerPerson, specifier: "%.2f")")
+~~~

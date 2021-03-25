@@ -28,9 +28,9 @@ Do the following **every day** for **100 days**:
 |[13](https://www.hackingwithswift.com/100/swift/13)| Consolidation I | [Swift review, day one](https://github.com/fadhilhaka/100-Days-of-Swift/tree/main/Day%2013-15) |
 |[14](https://www.hackingwithswift.com/100/swift/14)|  | [Swift review, day two](https://github.com/fadhilhaka/100-Days-of-Swift/tree/main/Day%2013-15) |
 |[15](https://www.hackingwithswift.com/100/swift/15)|  | [Swift review, day three](https://github.com/fadhilhaka/100-Days-of-Swift/tree/main/Day%2013-15) |
-|[16](https://www.hackingwithswift.com/100/swiftui/16)| Starting SwiftUI | Project 1, part one |
-|[17](https://www.hackingwithswift.com/100/swiftui/17)|  | Project 1, part two |
-|[18](https://www.hackingwithswift.com/100/swiftui/18)|  | Project 1, part three |
+|[16](https://www.hackingwithswift.com/100/swiftui/16)| Starting SwiftUI | [Project 1, part one](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2016-18) |
+|[17](https://www.hackingwithswift.com/100/swiftui/17)|  | [Project 1, part two](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2016-18) |
+|[18](https://www.hackingwithswift.com/100/swiftui/18)|  | [Project 1, part three](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2016-18) |
 |[19](https://www.hackingwithswift.com/100/swiftui/19)|  | Challenge day |
 |[20](https://www.hackingwithswift.com/100/swiftui/20)|  | Project 2, part one |
 |[21](https://www.hackingwithswift.com/100/swiftui/21)|  | Project 2, part two |
