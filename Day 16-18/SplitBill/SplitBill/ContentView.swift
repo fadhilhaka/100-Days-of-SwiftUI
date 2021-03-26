@@ -9,8 +9,10 @@ import SwiftUI
 
 /// Users need to be able to:
 /// Enter the cost of their check,
-/// Enter the number of people who shares the cost
-/// Enter the amount of tip they want give
+/// Enter the number of people who shares the cost,
+/// Enter the amount of tip they want give,
+/// See the split amount,
+/// See total payment
 struct ContentView: View {
     @State private var checkAmount    = ""
     @State private var numberOfPeople = 0

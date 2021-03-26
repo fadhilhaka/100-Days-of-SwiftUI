@@ -1,10 +1,10 @@
-# Project I
+# Project 1
 
 March 22<sup>nd</sup> 2021
 
 ## [Project 1, Part One](https://www.hackingwithswift.com/100/swiftui/16)
 
-* [WeSplit: Introduction](https://www.hackingwithswift.com/books/ios-swiftui/wesplit-introduction)
+* [SplitBill: Introduction](https://www.hackingwithswift.com/books/ios-swiftui/wesplit-introduction)
 * [Understanding the basic structure of a SwiftUI app](https://www.hackingwithswift.com/books/ios-swiftui/understanding-the-basic-structure-of-a-swiftui-app)
 * [Creating a form](https://www.hackingwithswift.com/books/ios-swiftui/creating-a-form)
 * [Adding a navigation bar](https://www.hackingwithswift.com/books/ios-swiftui/adding-a-navigation-bar)
@@ -32,7 +32,7 @@ struct ContentView_Previews: PreviewProvider {
 
 **struct ContentView: View** creates a new struct called ContentView, saying that it conforms to the View protocol. View comes from SwiftUI, and is the basic protocol that must be adopted by anything you want to draw on the screen – all text, buttons, images, and more are all views, including your own layouts that combine other views.
 
-**var body: some View** defines a new computed property called body, which has an interesting type: some View. This means it will return something that conforms to the View protocol, but that extra some keyword adds an important restriction: it must always be the same kind of view being returned – you can’t sometimes return one type of thing and other times return a different type of thing.
+**var body: some View** defines a new computed property called body, which has an interesting type: some View. This means it will return something that conforms to the View protocol, but that extra **some** keyword adds an important restriction: it must always be the same kind of **view** being returned – you can’t sometimes return one type of thing and other times return a different type of thing.
 
 **struct ContentView_Previews**, which conforms to the PreviewProvider protocol. This piece of code won’t actually form part of your final app that goes to the App Store, but is instead specifically for Xcode to use so it can show a preview of your UI design alongside your code. These previews use an Xcode feature called the canvas, which is usually visible directly to the right of your code.
 
@@ -104,11 +104,11 @@ NavigationView {
 
 ### @State 
 
-When creating struct methods that want to change properties, we need to add the mutating keyword: mutating func doSomeWork(), for example. However, Swift doesn’t let us make mutating computed properties, which means we can’t write mutating var body: some View – it just isn’t allowed.
+When creating struct methods that want to change properties, we need to add the mutating keyword: mutating func doSomeWork(), for example. However, SwiftUI doesn’t let us make mutating computed properties, which means we can’t write mutating var body: some View – it just isn’t allowed.
 
-Fortunately, Swift gives us a special solution called a property wrapper: @State. 
+Fortunately, SwiftUI gives us a special solution called a property wrapper: **@State**. 
 
-@State allows us to work around the limitation of structs: we know we can’t change their properties because structs are fixed, but @State allows that value to be stored separately by SwiftUI in a place that can be modified.
+**@State** allows us to work around the limitation of structs: we know we can’t change their properties because structs are fixed, but @State allows that value to be stored separately by SwiftUI in a place that can be modified.
 
 ~~~
 struct ContentView: View {
@@ -124,7 +124,7 @@ struct ContentView: View {
 
 ### State Binding
 
-In Swift, we mark **two-way bindings** (the value of the property is read, and also written) with a special symbol so they stand out: we write a **dollar** sign before them. This tells Swift that it should read the value of the property but also write it back as any changes happen.
+In SwiftUI, we mark **two-way bindings** (the value of the property is read, and also written) with a special symbol so they stand out: we write a **dollar** sign before them. This tells SwiftUI that it should read the value of the property but also write it back as any changes happen.
 
 ~~~
 struct ContentView: View {
@@ -155,7 +155,7 @@ Form {
 }
 ~~~
 
-ForEach doesn’t get hit by the 10-view limit that would affect us if we had typed the views by hand.
+**ForEach** doesn’t get hit by the 10-view limit that would affect us if we had typed the views by hand.
 
 ~~~
 struct ContentView: View {
@@ -174,6 +174,7 @@ struct ContentView: View {
     }
 }
 ~~~
+Code explanantion:
 
 1. The students array doesn’t need to be marked with @State because it’s a constant; it isn’t going to change.
 2. The selectedStudent property starts with the value 0 but can change, which is why it’s marked with @State.
@@ -191,11 +192,13 @@ struct ContentView: View {
 
 ### Start Building SplitBill
 
-Determining the rules, users need to be able to::
+The app should follows these rules, users need to be able to:
 
 1. Enter the cost of their check.
 2. Enter the number of people who shares the cost.
 3. Enter the amount of tip they want give.
+4. See the split amount
+5. See total payment
    
 >NOTE
 >>Why we’re using strings for the check amount, when clearly an **Int** or **Double** would work better. Well, the reason is that we have no choice: SwiftUI **must** use **strings** to store text field values.
@@ -215,7 +218,7 @@ This means we say what we want rather than say how it should be done. We said we
 
 ### Segmented Control
 
-We can change Picker style by calling **.pickerStyle()**. THis modifier will change Picker style to segmented control:
+We can change Picker style by calling **.pickerStyle()**. This modifier will change Picker style to segmented control:
 
 ~~~
 .pickerStyle(SegmentedPickerStyle())
@@ -238,12 +241,12 @@ Section(header: Text("How much tip do you want to give?")) {
 
 ## [Project 1, Part Three](https://www.hackingwithswift.com/100/swiftui/18)
 
-SwiftUI adds string interpolation feature: the ability to decide how a number ought to be formatted inside the string. This actually dates way back to the C programming language, we write a string called a specifier, giving it the value "%.2f”. That’s C’s syntax to mean “a two-digit floating-point number.”
-Very roughly, “%f” means “any sort of floating-point number,” which in our case will be the entire number. 
-An alternative is “%g”, which does the same thing except it removes insignificant zeroes from the end – $12.50 would be written as $12.5. Putting “.2” into the mix is what asks for two digits after the decimal point, regardless of what they are.
-
-[C-style format specifiers](https://en.wikipedia.org/wiki/Printf_format_string)
+SwiftUI adds string interpolation feature: the ability to decide how a number ought to be formatted inside the string. This actually dates way back to the C programming language, we write a string called a specifier, giving it the value **"%.2f”**. That’s C’s syntax to mean “a two-digit floating-point number.”
+Very roughly, **“%f”** means “any sort of floating-point number,” which in our case will be the entire number. 
+An alternative is **“%g”**, which does the same thing except it removes insignificant zeroes from the end – $12.50 would be written as $12.5. Putting “.2” into the mix is what asks for two digits after the decimal point, regardless of what they are.
 
 ~~~
 Text("$\(totalPerPerson, specifier: "%.2f")")
 ~~~
+
+[C-style format specifiers](https://en.wikipedia.org/wiki/Printf_format_string)

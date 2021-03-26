@@ -31,7 +31,7 @@ Do the following **every day** for **100 days**:
 |[16](https://www.hackingwithswift.com/100/swiftui/16)| Starting SwiftUI | [Project 1, part one](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2016-18) |
 |[17](https://www.hackingwithswift.com/100/swiftui/17)|  | [Project 1, part two](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2016-18) |
 |[18](https://www.hackingwithswift.com/100/swiftui/18)|  | [Project 1, part three](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2016-18) |
-|[19](https://www.hackingwithswift.com/100/swiftui/19)|  | Challenge day |
+|[19](https://www.hackingwithswift.com/100/swiftui/19)|  | [Challenge day](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2019) |
 |[20](https://www.hackingwithswift.com/100/swiftui/20)|  | Project 2, part one |
 |[21](https://www.hackingwithswift.com/100/swiftui/21)|  | Project 2, part two |
 |[22](https://www.hackingwithswift.com/100/swiftui/22)|  | Project 2, part three |
