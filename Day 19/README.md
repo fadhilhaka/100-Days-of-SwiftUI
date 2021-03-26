@@ -21,3 +21,5 @@ App flow's sample for length conversion:
 [Unit and Measurement](https://www.hackingwithswift.com/example-code/system/how-to-convert-units-using-unit-and-measurement)
 
 [Center Text with frame method](https://stackoverflow.com/questions/57518874/swiftui-how-to-center-text-in-a-form)
+
+[Replace current view](https://stackoverflow.com/questions/63384135/how-to-replace-the-current-view-in-swiftui)

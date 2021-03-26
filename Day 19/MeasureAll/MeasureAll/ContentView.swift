@@ -7,8 +7,12 @@
 
 import SwiftUI
 
+enum Conversion: String, CaseIterable {
+    case Temperature//, Time
+}
+
 enum Temperature: String, CaseIterable {
-    case celcius, fahrenheit, kelvin
+    case Celcius, Fahrenheit, Kelvin
     
     static func getType(by index: Int) -> Temperature {
         Temperature.allCases[index]
@@ -16,22 +20,26 @@ enum Temperature: String, CaseIterable {
 }
 
 struct ContentView: View {
+    @State private var title: String = "Temperature"
     @State private var selection: Int = 0
     @State private var selectionFrom: Int = 0
     @State private var selectionTo: Int = 0
     @State private var convertFrom: String = ""
     @State private var convertTo: Double = 0.0
-    @State private var normalizeValue: Double = 0.0
+    @State private var currentConversion: Conversion = .Temperature
     
     var body: some View {
         NavigationView {
             Form {
                 Picker("Conversion type", selection: $selection) {
-                    ForEach(0 ..< Temperature.allCases.count) {
-                        Text("\(Temperature.allCases[$0].rawValue)")
+                    ForEach(0 ..< Conversion.allCases.count) {
+                        Text("\(Conversion.allCases[$0].rawValue)")
                     }
                 }
                 .padding()
+                .onChange(of: selection) { _ in
+                    title = Conversion.allCases[selection].rawValue
+                }
                 
                 Section {
                     TextField("Input number to convert \(convertFrom)", text: $convertFrom)
@@ -54,7 +62,7 @@ struct ContentView: View {
                 Section {
                     Text("Converted to \(convertTo, specifier: "%.2f")")
                         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-
+                    
                     Picker("Conversion type", selection: $selectionTo) {
                         ForEach(0 ..< Temperature.allCases.count) {
                             Text("\(Temperature.allCases[$0].rawValue)")
@@ -65,8 +73,9 @@ struct ContentView: View {
                         calculateConvertion(from: selectionFrom, to: selectionTo)
                     }
                 }
+                
             }
-            .navigationBarTitle(Text("Temperature Conversion"), displayMode: .inline)
+            .navigationBarTitle(Text("\(title) Conversion"), displayMode: .inline)
         }
     }
     
@@ -76,35 +85,35 @@ struct ContentView: View {
         var normalizeValue: Double = 0.0
         
         switch type {
-        case .celcius:
+        case .Celcius:
             normalizeValue = Double(convertFrom) ?? 0.0
-        case .fahrenheit, .kelvin:
+        case .Fahrenheit, .Kelvin:
             normalizeValue = normalize(type, value: convertFrom)
         }
         
-        convertTo = targetType == .celcius ? normalizeValue : convert(normalizeValue, to: targetType)
+        convertTo = targetType == .Celcius ? normalizeValue : convert(normalizeValue, to: targetType)
     }
     
     func normalize(_ type: Temperature, value: String) -> Double {
         guard let value = Double(value) else { return 0.0 }
         
         switch type {
-        case .celcius:
+        case .Celcius:
             return value
-        case .fahrenheit:
+        case .Fahrenheit:
             return (value - 32.0) * 5/9
-        case .kelvin:
+        case .Kelvin:
             return value - 273.15
         }
     }
     
     func convert(_ value: Double, to type: Temperature) -> Double {
         switch type {
-        case .celcius:
+        case .Celcius:
             return value
-        case .fahrenheit:
+        case .Fahrenheit:
             return (value * 9/5) + 32.0
-        case .kelvin:
+        case .Kelvin:
             return value + 273.15
         }
     }
