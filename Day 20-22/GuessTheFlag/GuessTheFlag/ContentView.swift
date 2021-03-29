@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var showingScore = false
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var totalQuestion = 0
     
     var body: some View {
         ZStack {
@@ -49,8 +50,15 @@ struct ContentView: View {
                             .padding()
                     }
                     .alert(isPresented: $showingScore) {
-                        let message = scoreTitle == .Correct ? "Congratulations!\nYour score is: \(score)" : "What a pity, it's \(countries[correctAnswer]) flag.\nYour score is: \(score)"
-                        return Alert(title: Text(scoreTitle.rawValue), message: Text(message), dismissButton: .default(Text("Next")) {
+                        let buttonTitle = totalQuestion == 10 ? "Start Again" : "Next"
+                        let scoreMessage = totalQuestion == 10 ? "Your final score is: \(score)" : "Your score is: \(score)"
+                        let message = scoreTitle == .Correct ? "Congratulations!\n\(scoreMessage)" : "What a pity, it's \(countries[correctAnswer]) flag.\n\(scoreMessage)"
+                        
+                        return Alert(title: Text(scoreTitle.rawValue), message: Text(message), dismissButton: .default(Text(buttonTitle)) {
+                            if totalQuestion == 10 {
+                                self.reset()
+                            }
+                            
                             self.prepareQuestion()
                         })
                     }
@@ -65,11 +73,17 @@ struct ContentView: View {
         score     += index == correctAnswer ? 10 : -10
         scoreTitle = index == correctAnswer ? .Correct : .Wrong
         showingScore = true
+        totalQuestion += 1
     }
     
     func prepareQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+    }
+    
+    func reset() {
+        score = 0
+        totalQuestion = 0
     }
 }
 
