@@ -246,6 +246,58 @@ That’s another two-way data binding, and it’s here because SwiftUI will auto
 
 ## [Project 2, Part Two](https://www.hackingwithswift.com/100/swiftui/21)
 
+* [Stacking up buttons](https://www.hackingwithswift.com/books/ios-swiftui/stacking-up-buttons)
+* [Showing the player’s score with an alert](https://www.hackingwithswift.com/books/ios-swiftui/showing-the-players-score-with-an-alert)
+* [Styling our flags](https://www.hackingwithswift.com/books/ios-swiftui/styling-our-flags)
 
+### [Stacking up Buttons](https://www.hackingwithswift.com/books/ios-swiftui/stacking-up-buttons)
+
+Build the basic UI structure: 
+
+1. Two labels telling the user what to do.
+2. Three image buttons showing three world flags.
+
+### [Showing the Player’s Score with an Alert](https://www.hackingwithswift.com/books/ios-swiftui/showing-the-players-score-with-an-alert)
+
+We can add action/function as trailing closure to alert:
+
+~~~
+.alert(isPresented: $showingScore) {
+    Alert(title: Text(scoreTitle), message: Text("Your score is ???"), dismissButton: .default(Text("Continue")) {
+        self.askQuestion()
+    })
+}
+~~~
+
+### [Styling our Flags](https://www.hackingwithswift.com/books/ios-swiftui/styling-our-flags)
+
+~~~
+.font(.largeTitle)
+~~~
+
+**Large title** is the largest built-in font size iOS offers us, and automatically scales up or down depending on what setting the user has for their fonts – a feature known as Dynamic Type.
+
+There are four built-in shapes in Swift: rectangle, rounded rectangle, circle, and capsule.
+
+Making our image **capsule** shaped is as easy as adding the **.clipShape(Capsule())** modifier, like this:
+
+~~~
+.clipShape(Capsule())
+~~~
+
+Drawing a border around the image can be done using the **overlay()** modifier. This lets us draw another view over the flag, which in our case will be a capsule that has a black stroke around its edge. So, add this modifier after clipShape():
+
+~~~
+.overlay(Capsule().stroke(Color.black, lineWidth: 1))
+~~~
+
+Adding shadow effect around flag can be done using **shadow()**, which takes the color, radius, X, and Y offset of the shadow, but if you skip X and Y it assumes 0 for them. So, add this last modifier below the previous two:
+
+~~~
+.shadow(color: .black, radius: 2)
+~~~
 
 ## [Project 2, Part Three](https://www.hackingwithswift.com/100/swiftui/22)
+
+* [Guess the Flag: Wrap up](https://www.hackingwithswift.com/books/ios-swiftui/guess-the-flag-wrap-up)
+* [Review for Project 2: Guess the Flag](https://www.hackingwithswift.com/review/ios-swiftui/guess-the-flag)
