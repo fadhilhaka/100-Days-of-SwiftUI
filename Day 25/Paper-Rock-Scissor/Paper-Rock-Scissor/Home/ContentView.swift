@@ -42,7 +42,6 @@ struct Computer: View {
 }
 
 struct Player: View {
-    @State var showingResult = false
     let weapon: Weapon
     let score: Int
     let isPrepared: Bool
@@ -63,12 +62,8 @@ struct Player: View {
                     
                     Button {
                         action(weaponName)
-                        
                     } label: {
                         Text(weaponName).font(.system(size: 90))
-                    }
-                    .alert(isPresented: $showingResult) {
-                        Alert(title: Text("Alert"), message: Text("ok"), dismissButton: .default(Text("Play Again")))
                     }
                 }
             }
@@ -89,8 +84,10 @@ struct ContentView: View {
     @State var playerSelection = 0
     @State var playerIsPrepared = false
     @State var score = 0
-    @State var totalRound = 1
+    @State var totalRound = 0
     @State var resultMessage = "Pick your weapon..."
+    @State var showingResult = false
+    @State var showingFinalResult = false
     
     let weaponList = Weapon.allCases
     
@@ -107,22 +104,42 @@ struct ContentView: View {
     }
     
     var body: some View {
-        Computer(weapon: computerWeapon, isPrepared: computerIsPrepared)
-        
-        Spacer()
-        
-        Text(resultMessage)
-            .font(.title)
-        
-        Spacer()
-        
-        Player(weapon: playerWeapon, score: score, isPrepared: playerIsPrepared) { weapon in
-            playerAction(weapon)
+        let resultText = Text(resultMessage).font(.title)
+        let resetButton = Button("Play Again") {
+            computerIsPrepared = false
+            playerIsPrepared   = false
+            resultMessage = "Pick your weapon..."
+            showingResult = false
         }
-
-//        if showAlert {
-//            Alert(title: "Alert", message: "ok", dismissButton: .default(Text("Play Again")))
-//        }
+        
+        VStack {
+            Computer(weapon: computerWeapon, isPrepared: computerIsPrepared)
+            
+            Spacer()
+            
+            if showingResult {
+                resultText
+                resetButton
+            } else {
+                resultText
+            }
+            
+            Spacer()
+            
+            Player(weapon: playerWeapon, score: score, isPrepared: playerIsPrepared) { weapon in
+                playerAction(weapon)
+            }
+        }
+        .alert(isPresented: $showingFinalResult) {
+            Alert(title: Text("Final Score"), message: Text("Your final score is: \(score)"), dismissButton: .default(Text("Restart Challenge")) {
+                computerIsPrepared = false
+                playerIsPrepared   = false
+                resultMessage = "Pick your weapon..."
+                showingResult = false
+                score         = 0
+                totalRound    = 0
+            })
+        }
     }
     
     func playerAction(_ weapon: String) {
@@ -135,18 +152,19 @@ struct ContentView: View {
     }
     
     func setMessage() {
-//        case paper = "🖐🏼"
-//        case rock = "✊🏼"
-//        case scissor = "✌🏼"
-        var playerWin = false
-        
+//        case paper = "🖐🏼" 1-2-0
+//        case rock = "✊🏼" 0-1-2
+//        case scissor = "✌🏼" 2-0-1
+//        0>1>2>0
         switch playerWeapon {
         case .paper:
             switch computerWeapon {
             case .paper:
                 resultMessage = "It's a Draw."
+                score += 1
             case .rock:
                 resultMessage = "You Win!!!"
+                score += 3
             case .scissor:
                 resultMessage = "You Lose..."
             }
@@ -156,20 +174,30 @@ struct ContentView: View {
                 resultMessage = "You Lose..."
             case .rock:
                 resultMessage = "It's a Draw."
+                score += 1
             case .scissor:
                 resultMessage = "You Win!!!"
+                score += 3
             }
         case .scissor:
             switch computerWeapon {
             case .paper:
                 resultMessage = "You Win!!!"
+                score += 3
             case .rock:
                 resultMessage = "You Lose..."
             case .scissor:
                 resultMessage = "It's a Draw."
+                score += 1
             }
         }
         
+        totalRound += 1
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            showingResult = totalRound != 10
+            showingFinalResult = totalRound == 10
+        }
     }
 }
 
