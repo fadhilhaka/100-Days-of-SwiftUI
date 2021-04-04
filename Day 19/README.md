@@ -2,6 +2,10 @@
 
 March 26<sup>th</sup> 2021
 
+|                        |                        |
+|:----------------------:|:----------------------:|
+| ![](images/img_1.png)  | ![](images/img_2.png)  |
+
 Build an app that handles unit conversions: users will select an input unit and an output unit, then enter a value, and see the output of the conversion.
 
 Conversion type:

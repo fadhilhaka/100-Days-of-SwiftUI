@@ -2,6 +2,10 @@
 
 March 22<sup>nd</sup> 2021
 
+|                        |                        |                        |
+|:----------------------:|:----------------------:|:----------------------:|
+| ![](images/img_1.png)  | ![](images/img_2.png)  | ![](images/img_3.png)  |
+
 ## [Project 1, Part One](https://www.hackingwithswift.com/100/swiftui/16)
 
 * [SplitBill: Introduction](https://www.hackingwithswift.com/books/ios-swiftui/wesplit-introduction)

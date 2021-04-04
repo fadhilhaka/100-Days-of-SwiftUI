@@ -2,6 +2,10 @@
 
 March 29<sup>th</sup> 2021
 
+|                        |                        |                        |
+|:----------------------:|:----------------------:|:----------------------:|
+| ![](images/img_1.png)  | ![](images/img_2.png)  | ![](images/img_3.png)  |
+
 ## [Project 2, Part One](https://www.hackingwithswift.com/100/swiftui/20)
 
 * [Guess the Flag: Introduction](https://www.hackingwithswift.com/books/ios-swiftui/guess-the-flag-introduction)

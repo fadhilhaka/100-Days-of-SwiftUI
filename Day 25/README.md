@@ -2,6 +2,10 @@
 
 April 2<sup>nd</sup> 2021
 
+|                        |                        |                        |                        |                        |
+|:----------------------:|:----------------------:|:----------------------:|:----------------------:|:----------------------:|
+| ![](images/img_1.png)  | ![](images/img_2.png)  | ![](images/img_3.png)  | ![](images/img_4.png)  | ![](images/img_5.png)  |
+
 * [What you learned](https://www.hackingwithswift.com/guide/ios-swiftui/2/1/what-you-learned)
 * [Key points](https://www.hackingwithswift.com/guide/ios-swiftui/2/2/key-points)
 * [Challenge](https://www.hackingwithswift.com/guide/ios-swiftui/2/3/challenge)
@@ -101,7 +105,3 @@ App flow:
 * Win equal to 3 point, Draw equal to 1 point and Lose equal to 0 point.
 
 [Rotate Text, Button, Rectangle in SwiftUI](https://stackoverflow.com/questions/56494064/how-can-you-rotate-text-button-rectangle-in-swiftui)
-
-![alt text](paper_rock_scissor_start.png)
-
-![alt text](paper_rock_scissor_finish.png)
