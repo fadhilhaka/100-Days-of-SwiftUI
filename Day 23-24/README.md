@@ -349,3 +349,5 @@ Text("Hello World")
 ~~~
 
 ## [Custom Containers](https://www.hackingwithswift.com/books/ios-swiftui/custom-containers)
+
+[Custom Image Modifier](https://stackoverflow.com/questions/58804696/swiftui-viewmodifier-where-content-is-an-image/59946554#59946554?newreg=c9668c4a9fbd42e9a1ca07163f4bc2a9)

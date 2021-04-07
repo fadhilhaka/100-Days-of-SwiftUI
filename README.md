@@ -36,7 +36,7 @@ Do the following **every day** for **100 days**:
 |[21](https://www.hackingwithswift.com/100/swiftui/21)|  | [Project 2, part two](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2020-22) |
 |[22](https://www.hackingwithswift.com/100/swiftui/22)|  | [Project 2, part three](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2020-22) |
 |[23](https://www.hackingwithswift.com/100/swiftui/23)|  | [Project 3, part one](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2023-24) |
-|[24](https://www.hackingwithswift.com/100/swiftui/24)|  | [Project 3, part one](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2023-24) |
+|[24](https://www.hackingwithswift.com/100/swiftui/24)|  | [Project 3, part two](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2023-24) |
 |[25](https://www.hackingwithswift.com/100/swiftui/25)| Consolidation II | [Milestone: Projects 1-3](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2025) |
 |[26](https://www.hackingwithswift.com/100/swiftui/26)| Expanding your skills | Project 4, part one |
 |[27](https://www.hackingwithswift.com/100/swiftui/27)|  | Project 4, part two |

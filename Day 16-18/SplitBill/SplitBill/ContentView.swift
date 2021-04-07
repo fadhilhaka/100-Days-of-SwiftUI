@@ -55,6 +55,7 @@ struct ContentView: View {
                 
                 Section(header: Text("Total Bill")) {
                     Text("$\(totalPerPerson * Double(numberOfPeople + 2), specifier: "%.2f")")
+                        .foregroundColor(tipPercentage == 4 ? .red : .black)
                 }
             }
             .navigationBarTitle(Text("Split Bill"))

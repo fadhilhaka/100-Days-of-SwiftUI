@@ -31,23 +31,39 @@ struct GridStack<Content: View>: View {
     }
 }
 
+struct Title: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(Font.largeTitle.weight(.bold))
+            .foregroundColor(.primary)
+    }
+}
+
 struct ContentView: View {
+    var hogwartsHouses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+    
     var body: some View {
-        GridStack(rows: 4, columns: 4) { row, col in
-            Image(systemName: "\(row * 4 + col + 1).circle")
-            Text("R\(row) C\(col)")
+        Text("Hogwarts Houses")
+            .modifier(Title())
+            .padding()
+        
+        GridStack(rows: 1, columns: 4) { row, col in
+            VStack {
+                Text(hogwartsHouses[col])
+                Image(systemName: "\(row * 4 + col + 1).circle")
+            }
         }
         
-        VStack {
+        HStack {
             Text("Gryffindor")
-                .font(.largeTitle)
+                .font(.title)
             Text("Hufflepuff")
             Text("Ravenclaw")
             Text("Slytherin")
         }
-        .font(.title3)
+        .font(.footnote)
         
-        VStack {
+        HStack {
             Text("Gryffindor")
                 .blur(radius: 0)
             Text("Hufflepuff")
@@ -64,7 +80,7 @@ struct ContentView: View {
         Button("Hello World") {
             print(type(of: self.body))
         }
-        .frame(width: 200, height: 200)
+        .frame(width: 120, height: 40)
         .background(Color.red)
         
         Text("Hello World")
