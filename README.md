@@ -38,9 +38,9 @@ Do the following **every day** for **100 days**:
 |[23](https://www.hackingwithswift.com/100/swiftui/23)|  | [Project 3, part one](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2023-24) |
 |[24](https://www.hackingwithswift.com/100/swiftui/24)|  | [Project 3, part two](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2023-24) |
 |[25](https://www.hackingwithswift.com/100/swiftui/25)| Consolidation II | [Milestone: Projects 1-3](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2025) |
-|[26](https://www.hackingwithswift.com/100/swiftui/26)| Expanding your skills | Project 4, part one |
-|[27](https://www.hackingwithswift.com/100/swiftui/27)|  | Project 4, part two |
-|[28](https://www.hackingwithswift.com/100/swiftui/28)|  | Project 4, part three |
+|[26](https://www.hackingwithswift.com/100/swiftui/26)| Expanding your skills | [Project 4, part one](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2026-28) |
+|[27](https://www.hackingwithswift.com/100/swiftui/27)|  | [Project 4, part two](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2026-28) |
+|[28](https://www.hackingwithswift.com/100/swiftui/28)|  | [Project 4, part three](https://github.com/fadhilhaka/100-Days-of-SwiftUI/tree/main/Day%2026-28) |
 |[29](https://www.hackingwithswift.com/100/swiftui/29)|  | Project 5, part one |
 |[30](https://www.hackingwithswift.com/100/swiftui/30)|  | Project 5, part two |
 |[31](https://www.hackingwithswift.com/100/swiftui/31)|  | Project 5, part three |
