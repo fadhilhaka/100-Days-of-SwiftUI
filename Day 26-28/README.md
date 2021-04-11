@@ -6,7 +6,7 @@ April 10<sup>th</sup> 2021
 |:----------------------:|:----------------------:|:----------------------:|
 | ![](images/img_1.png)  | ![](images/img_2.png)  | ![](images/img_3.png)  |
 
-## Project 4, part one
+## [Project 4, part one](https://www.hackingwithswift.com/100/swiftui/26)
 
 * [BetterRest: Introduction](https://www.hackingwithswift.com/books/ios-swiftui/betterrest-introduction)
 * [Entering numbers with Stepper](https://www.hackingwithswift.com/books/ios-swiftui/entering-numbers-with-stepper)
@@ -120,7 +120,7 @@ This is exactly how random forest regressors work: each decision tree has its ow
 
 Automatic option will attempts to choose the best algorithm automatically. It’s not always correct, and in fact it does limit the options we have quite dramatically, but for this project it’s more than good enough.
 
-## Project 4, part two
+## [Project 4, part two](https://www.hackingwithswift.com/100/swiftui/27)
 
 * [Building a basic layout](https://www.hackingwithswift.com/books/ios-swiftui/building-a-basic-layout)
 * [Connecting SwiftUI to Core ML](https://www.hackingwithswift.com/books/ios-swiftui/connecting-swiftui-to-core-ml)
@@ -174,7 +174,7 @@ And now we know exactly when they should go to sleep. Our final challenge is to 
 
 [Get decimal part](https://stackoverflow.com/questions/31396301/getting-the-decimal-part-of-a-double-in-swift)
 
-## Project 4, part three
+## [Project 4, part three](https://www.hackingwithswift.com/100/swiftui/28)
 
 * [BetterRest: Wrap up](https://www.hackingwithswift.com/books/ios-swiftui/betterrest-wrap-up)
 * [Review for Project 4: BetterRest](https://www.hackingwithswift.com/review/ios-swiftui/betterrest)
