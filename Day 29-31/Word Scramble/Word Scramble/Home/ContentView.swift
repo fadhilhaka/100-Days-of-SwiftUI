@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     @State private var isStarted = false
+    @State private var countDown = 60
     
     var wordList: [String] {
         var list: [String] = []
@@ -30,18 +31,37 @@ struct ContentView: View {
         return list
     }
     
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
         NavigationView {
             VStack {
                 if isStarted {
-                    TextField("Enter your word", text: $newWord, onCommit: addNewWord)
-                        .autocapitalization(.none)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
+                    if countDown > 0 {
+                        TextField("Enter your word", text: $newWord, onCommit: addNewWord)
+                            .autocapitalization(.none)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding()
+                    }
                     
                     List(usedWords, id: \.self) {
                         Image(systemName: "\($0.count).circle")
                         Text($0)
+                    }
+                    
+                    if countDown == 0 {
+                        Button("Pick New Word") {
+                            countDown = 60
+                            usedWords.removeAll()
+                            startGame()
+                        }
+                        .padding()
+                        
+                    } else {
+                        Text("\(countDown)")
+                            .onReceive(timer) { time in
+                                countDown -= 1
+                            }
                     }
                     
                 } else {
