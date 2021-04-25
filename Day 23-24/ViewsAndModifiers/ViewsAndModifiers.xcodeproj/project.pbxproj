@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D21E168E262D0B300008E953 /* AnimalPrediction 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = D21E168D262D0B300008E953 /* AnimalPrediction 1.mlmodel */; };
 		D29BB7A82614C8BA00ACC225 /* ViewsAndModifiersApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7A72614C8BA00ACC225 /* ViewsAndModifiersApp.swift */; };
 		D29BB7AA2614C8BA00ACC225 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29BB7A92614C8BA00ACC225 /* ContentView.swift */; };
 		D29BB7AC2614C8BD00ACC225 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29BB7AB2614C8BD00ACC225 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D21E168D262D0B300008E953 /* AnimalPrediction 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "AnimalPrediction 1.mlmodel"; sourceTree = "<group>"; };
 		D29BB7A42614C8BA00ACC225 /* ViewsAndModifiers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewsAndModifiers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D29BB7A72614C8BA00ACC225 /* ViewsAndModifiersApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewsAndModifiersApp.swift; sourceTree = "<group>"; };
 		D29BB7A92614C8BA00ACC225 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 				D29BB7A92614C8BA00ACC225 /* ContentView.swift */,
 				D29BB7AB2614C8BD00ACC225 /* Assets.xcassets */,
 				D29BB7B02614C8BD00ACC225 /* Info.plist */,
+				D21E168D262D0B300008E953 /* AnimalPrediction 1.mlmodel */,
 				D29BB7AD2614C8BD00ACC225 /* Preview Content */,
 			);
 			path = ViewsAndModifiers;
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D21E168E262D0B300008E953 /* AnimalPrediction 1.mlmodel in Sources */,
 				D29BB7AA2614C8BA00ACC225 /* ContentView.swift in Sources */,
 				D29BB7A82614C8BA00ACC225 /* ViewsAndModifiersApp.swift in Sources */,
 			);
